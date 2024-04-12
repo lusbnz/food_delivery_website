@@ -10,8 +10,8 @@ const links = [
   { id: 1, title: "Trang chủ", url: "/" },
   { id: 2, title: "Thực đơn", url: "/menu" },
   { id: 3, title: "Thêm thực đơn", url: "/add" },
-  { id: 4, title: "Giới thiệu", url: "" },
-  { id: 5, title: "Liên hệ", url: "/" },
+  { id: 4, title: "Thống kê", url: "/dashboard" },
+  { id: 5, title: "Giới thiệu", url: "" },
 ];
 
 const Menu = () => {

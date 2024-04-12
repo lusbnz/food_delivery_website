@@ -24,11 +24,11 @@ const Navbar = () => {
               Thêm thực đơn
             </Link>
           )}
-          <Link href="/" className="nav-link hover:text-red-500">
-            Giới thiệu
+          <Link href="/dashboard" className="nav-link hover:text-red-500">
+            Thống kê
           </Link>
           <Link href="/" className="nav-link hover:text-red-500">
-            Liên hệ
+            Giới thiệu
           </Link>
         </div>
         <div className="text-xl font-bold">

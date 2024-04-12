@@ -5,13 +5,15 @@ import { OrderType } from "@/types/types";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
-import React from "react";
+import React, { useState } from "react";
 import { toast } from "react-toastify";
 
 const OrdersPage = () => {
   const { data: session, status } = useSession();
 
   const router = useRouter();
+
+  const [value, setValue] = useState('')
 
   if (status === "unauthenticated") {
     router.push("/");
@@ -102,10 +104,19 @@ const OrdersPage = () => {
                     className="flex items-center justify-center gap-4"
                     onSubmit={(e) => handleUpdate(e, item.id)}
                   >
-                    <input
+                    {/* <input
                       placeholder={item.status}
                       className="p-2 ring-1 ring-red-100 rounded-md"
-                    />
+                    /> */}
+                    <select
+                      className="p-2 ring-1 ring-red-100 rounded-md"
+                      // defaultValue={item.status}
+                      // value={value}
+                      onChange={(key: any) => setValue(key)}
+                    >
+                      <option value="not-paid">Chưa thanh toán</option>
+                      <option value="paid">Đã thanh toán</option>
+                    </select>
                     <button
                       type="submit"
                       className="bg-red-400 p-2 rounded-xl text-white"
